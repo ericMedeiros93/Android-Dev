@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">bmi</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="weight_hint">Weight</string>
+    <string name="height_hint">Height</string>
+    <string name="btn">Calculate</string>
+
+</resources>
