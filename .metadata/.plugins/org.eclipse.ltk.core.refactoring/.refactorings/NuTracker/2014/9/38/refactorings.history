@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;NuTracker&apos;&#x0A;- Original project: &apos;NuTracker&apos;&#x0A;- Original elements:&#x0A;     com&#x0A;     META-INF" description="Delete elements" element1="libs/META-INF" element2="libs/com" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1410830044877" subPackages="false" version="1.0"/>
+</session>

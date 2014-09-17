@@ -1,0 +1,179 @@
+package com.NaN.nutracker;
+
+import java.text.DateFormatSymbols;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.ExecutionException;
+
+import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+public class EnterRoute extends Activity {
+
+	ProgressDialog pd;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_enter_route);
+
+		if (savedInstanceState == null) {
+			getFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+
+		// Force the driver to login.
+		forceLogin();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.enter_route, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_enter_route,
+					container, false);
+			return rootView;
+		}
+	}
+
+	/**
+	 * As soon as the EnterRoute activity is launched this method is called. It
+	 * forces the driver to login to the app.
+	 */
+	private void forceLogin() {
+		Intent intent = new Intent(this, Login.class);
+		startActivityForResult(intent, 1);
+	}
+
+	/**
+	 * Get the result from the login activity. If the driver disagreed to the
+	 * agreement the app closes.
+	 */
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == 1) {
+
+			if (resultCode == RESULT_OK) {
+			}
+			if (resultCode == RESULT_CANCELED) {
+				finish();
+			}
+		}
+	}
+
+	public void cancel(View view) {
+		EditText editText = (EditText) findViewById(R.id.routeId);
+		EditText editText2 = (EditText) findViewById(R.id.routeDate);
+		if (editText == null || editText.getText().toString().equals("") && editText2 == null || editText2.getText().toString().equals("")) {
+			Toast.makeText(this, "Nothing to clear!", Toast.LENGTH_SHORT)
+					.show();
+		}
+
+		editText.setText("");
+		editText2.setText("");
+	}
+
+	/**
+	 * Opens the view loads intent when the accept button is tapped.
+	 * 
+	 * @param view
+	 * @throws ExecutionException 
+	 * @throws InterruptedException 
+	 */
+	public void viewLoads(View view) throws InterruptedException, ExecutionException {
+		EditText routeId = (EditText) findViewById(R.id.routeId);
+		// Toast.makeText(this, routeId.getText().toString(),
+		// Toast.LENGTH_SHORT).show();
+		pd = new ProgressDialog(Login.this);
+		pd.setMessage("loading");
+		pd.show();
+		boolean found = new GetRoutes().execute(routeId.getText().toString()).get();
+		if(found == true){
+		Intent intent = new Intent(this, ViewLoads.class);
+		intent.putExtra("rId", routeId.getText().toString());
+		startActivity(intent);
+		}
+	}
+
+	
+	public void showDatePickerDialog(View v) {
+	    DialogFragment newFragment = new DatePickerFragment();
+	    newFragment.show(getFragmentManager(), "datePicker");
+	}
+
+	public static class DatePickerFragment extends DialogFragment implements
+			DatePickerDialog.OnDateSetListener {
+
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			// Use the current date as the default date in the picker
+			final Calendar c = Calendar.getInstance();
+			 int year = c.get(Calendar.YEAR);
+			 int month = c.get(Calendar.MONTH);
+			 int day = c.get(Calendar.DAY_OF_MONTH);
+
+			// Create a new instance of DatePickerDialog and return it
+			return new DatePickerDialog(getActivity(), this, year, month, day);
+		}
+
+		@Override
+		public void onDateSet(DatePicker view, int year, int monthOfYear,
+				int dayOfMonth) {
+			// TODO Auto-generated method stub
+
+			EditText et = (EditText)getActivity().findViewById(R.id.routeDate);
+			String date = new DateFormatSymbols().getMonths()[monthOfYear] +" "+dayOfMonth+", "+year;
+			et.setText(date);
+			
+			
+
+		}
+
+	}
+}
