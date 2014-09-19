@@ -1,0 +1,39 @@
+package com.NaN.nutracker;
+
+import java.util.List;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+
+public class LoadHeaderAdapter extends ArrayAdapter<Load>{
+
+    Context context; 
+    int layoutResourceId;    
+    List<Load> data = null;
+    
+    public LoadHeaderAdapter(Context context, int layoutResourceId, List<Load> data) {
+        super(context, layoutResourceId, data);
+        this.layoutResourceId = layoutResourceId;
+        this.context = context;
+        this.data = data;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+    	LayoutInflater inflater = (LayoutInflater) context
+    			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    			View rowView = inflater.inflate(R.layout.load_header_layout, parent, false);
+    			CheckBox chk=(CheckBox)rowView.findViewById(R.id.makeThisinvisible);
+    			Load current=data.get(position);
+    			chk.setText(String.valueOf(current.getloadID()));
+    			chk.setChecked(current.getSelected());
+
+    			return rowView;
+    }
+   
+
+}

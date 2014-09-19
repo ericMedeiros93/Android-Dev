@@ -1,0 +1,162 @@
+package com.NaN.nutracker;
+
+import java.util.Calendar;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.Fragment;
+import android.app.TimePickerDialog;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+public class LateAlert extends Activity {
+	
+	 private Calendar cal;
+	 private int hour;
+	 private int min;
+	 private EditText et;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_late_alert);
+
+		if (savedInstanceState == null) {
+			getFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+		ActionBar actionBar = getActionBar();
+		actionBar.setHomeButtonEnabled(true);
+		cal = Calendar.getInstance();
+		hour = cal.get(Calendar.HOUR_OF_DAY);
+		min = cal.get(Calendar.MINUTE);
+		et = (EditText) findViewById(R.id.eta);
+		populateList();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.late_alert, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_late_alert,
+					container, false);
+			return rootView;
+		}
+	}
+	
+	public void populateList(){
+		
+		//String codes[] = new String[] {"WTHR","ACC","TRFFC","INCWTHR"};
+		//ListView lv = (ListView)findViewById(R.id.codeList);
+		//ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, R.layout.load_list, codes); 
+		//lv.setAdapter(listAdapter);
+		final Spinner spinner = (Spinner) findViewById(R.id.codess_spinner);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.codes_array, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener()
+		{
+		@Override
+		public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long id) {
+		// TODO Auto-generated method stub
+			TextView desc = (TextView) findViewById(R.id.desc);
+			String code = spinner.getSelectedItem().toString();
+			if(code.equals("Weather")){
+				desc.setText(R.string.weatherDsc);
+			}else if(code.equals("Accident")){
+				desc.setText(R.string.accidentDsc);
+			}else{
+				desc.setText(R.string.trafficDsc);
+			}
+		}
+		@Override
+		public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		}             
+		}); 
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void showPick(View view){
+		showDialog(0);
+	}
+	
+	 @Override
+	 @Deprecated
+	 protected Dialog onCreateDialog(int id) {
+	  return new TimePickerDialog(this, timePickerListener, hour, min, false);
+	 }
+
+	 private TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
+	  @Override
+	  public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+	   int hour;
+	   String am_pm;
+	   if (hourOfDay > 12) {
+	    hour = hourOfDay - 12;
+	    am_pm = "PM";
+	   } else {
+	    hour = hourOfDay;
+	    am_pm = "AM";
+	   }
+	   if(minute < 10){
+		   et.setText(hour + " :0" + minute + " " + am_pm); 
+	   }else{
+		   et.setText(hour + " : " + minute + " " + am_pm);
+	   }
+	   
+	  }
+	 };
+	 
+	 public void sendAlert(View view){
+		 Toast.makeText(this, "Late Alert Sent!", Toast.LENGTH_LONG).show();
+		 finish();
+	 }
+	
+
+}
