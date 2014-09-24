@@ -21,17 +21,21 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		spnTips = (Spinner) findViewById(R.id.tip_amounts);
-		spnPeople = (Spinner) findViewById(R.id.people_amount);
+		
+		//Initialize the controls
+		spnTips = (Spinner) findViewById(R.id.spnTipAmounts);
+		spnPeople = (Spinner) findViewById(R.id.spnPeopleAmount);
 		edtOtherTip = (EditText) findViewById(R.id.edtOtherAmount);
 		edtCost = (EditText) findViewById(R.id.edtCost);
-		tvTip = (TextView) findViewById(R.id.tipTotal);
-		tvAmount = (TextView) findViewById(R.id.total);
-		tvSplit = (TextView) findViewById(R.id.split);
+		tvTip = (TextView) findViewById(R.id.tvTipTotal);
+		tvAmount = (TextView) findViewById(R.id.tvTotal);
+		tvSplit = (TextView) findViewById(R.id.tvSplit);
 		edtOtherTip.setEnabled(false);
 
+		//Fill the spinners with content
 		fillSpinners();
 
+		//Create an onItemSelected listener to enable the other EditText
 		spnTips.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -75,6 +79,9 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	/**
+	 * Fill the spinners with the arrays set in strings.xml
+	 */
 	public void fillSpinners() {
 		ArrayAdapter<CharSequence> tipAdapter = ArrayAdapter
 				.createFromResource(this, R.array.tip,
@@ -91,6 +98,10 @@ public class MainActivity extends Activity {
 		spnPeople.setAdapter(peopleAdapter);
 	}
 
+	/**
+	 * Calculates the totals for tip and per person then displays it
+	 * @param view
+	 */
 	public void calculate(View view) {
 
 		double tipAmountPercent = 0;
@@ -110,13 +121,11 @@ public class MainActivity extends Activity {
 			tipAmountPercent = .20;
 			break;
 		case 3:
-			double amount = Double
-					.parseDouble(edtOtherTip.getText().toString());
+			double amount = Double.parseDouble(edtOtherTip.getText().toString());
 			tipAmountPercent = (amount / 100);
 			break;
 		case 4:
-			tipAmountDollar = Double.parseDouble(edtOtherTip.getText()
-					.toString());
+			tipAmountDollar = Double.parseDouble(edtOtherTip.getText().toString());
 			dollar = true;
 			break;
 

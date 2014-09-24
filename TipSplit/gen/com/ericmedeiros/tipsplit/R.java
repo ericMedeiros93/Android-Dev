@@ -34,11 +34,11 @@ public final class R {
         public static final int clear=0x7f090005;
         public static final int edtCost=0x7f090000;
         public static final int edtOtherAmount=0x7f090002;
-        public static final int people_amount=0x7f090003;
-        public static final int split=0x7f090008;
-        public static final int tipTotal=0x7f090006;
-        public static final int tip_amounts=0x7f090001;
-        public static final int total=0x7f090007;
+        public static final int spnPeopleAmount=0x7f090003;
+        public static final int spnTipAmounts=0x7f090001;
+        public static final int tvSplit=0x7f090008;
+        public static final int tvTipTotal=0x7f090006;
+        public static final int tvTotal=0x7f090007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

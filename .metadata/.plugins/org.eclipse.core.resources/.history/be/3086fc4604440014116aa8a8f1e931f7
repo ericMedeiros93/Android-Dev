@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ericmedeiros.week4_scratch.MainActivity" >
+
+    <item
+        android:id="@+id/herp"
+        android:orderInCategory="98"
+        android:showAsAction="ifRoom"
+        android:icon=ic_launcher.png
+        android:title="@string/herp"/>
+    
+    <item
+        android:id="@+id/derp"
+        android:orderInCategory="99"
+        android:showAsAction="never"
+        android:title="@string/derp"/>
+    
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    
+    
+
+</menu>

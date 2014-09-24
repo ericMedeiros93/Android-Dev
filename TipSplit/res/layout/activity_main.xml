@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ericmedeiros.tipsplit.MainActivity" >
+    tools:context="com.ericmedeiros.tipsplit.MainActivity"
+    tools:ignore="ButtonStyle" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +44,7 @@
             android:text="@string/tip_label" />
 
         <Spinner
-            android:id="@+id/tip_amounts"
+            android:id="@+id/spnTipAmounts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -73,7 +74,7 @@
             android:text="@string/people_label" />
 
         <Spinner
-            android:id="@+id/people_amount"
+            android:id="@+id/spnPeopleAmount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -90,9 +91,10 @@
             android:id="@+id/calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calculate"
             android:layout_marginRight="30dp"
-            android:onClick="calculate"/>
+            android:onClick="calculate"
+            android:text="@string/calculate"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/clear"
@@ -107,19 +109,19 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tipTotal"
+            android:id="@+id/tvTipTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp" />
 
         <TextView
-            android:id="@+id/total"
+            android:id="@+id/tvTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp" />
 
         <TextView
-            android:id="@+id/split"
+            android:id="@+id/tvSplit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

@@ -85,32 +85,50 @@ public class MainActivity extends Activity {
 			output += "Large ";
 			break;
 		}
-		
+
 		output += "with ";
-		
-		if(chkCheese.isChecked()){
-			output+="cheese ";
+
+		if (chkCheese.isChecked()) {
+			output += "cheese ";
 		}
-		if(chkPepperoni.isChecked()){
-			output+="pepperoni ";
+		if (chkPepperoni.isChecked()) {
+			output += "pepperoni ";
 		}
-		if(chkSausage.isChecked()){
-			output+="sausage ";
+		if (chkSausage.isChecked()) {
+			output += "sausage ";
 		}
-		if(chkBacon.isChecked()){
-			output+="bacon ";
+		if (chkBacon.isChecked()) {
+			output += "bacon ";
 		}
-		if(chkGreenPepper.isChecked()){
-			output+= "green Pepper ";
+		if (chkGreenPepper.isChecked()) {
+			output += "green Pepper ";
 		}
-		
-		if(swDeliveryPickup.isChecked()){
-			output+="for Delivery.";
-		}else{
-			output+="for Pickup.";
+
+		if (swDeliveryPickup.isChecked()) {
+			output += "for Delivery.";
+		} else {
+			output += "for Pickup.";
 		}
-		
+
 		txtFinalOrder.setText(output);
 
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		
+		//Get back the order from the bundle coming in. 
+		String previousOrder = savedInstanceState.getString("orderResult", ""); 
+		txtFinalOrder.setText(previousOrder);
+		
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		
+		//Save to order into the bundle we're given. 
+		outState.putString("orderResult", txtFinalOrder.getText().toString());
 	}
 }
