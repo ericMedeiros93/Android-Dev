@@ -1,0 +1,153 @@
+package com.NaN.nutracker;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.os.AsyncTask;
+import android.widget.ListView;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+public class GetStops extends AsyncTask<String, Void, List<Stop>> {
+	//ListView allLoads;
+	String rID="";
+	String result ="fail";
+
+	@Override
+	protected List<Stop> doInBackground(String... params) {
+		// TODO Auto-generated method stub
+		//this.allLoads = params[0];
+		this.rID = params[0];
+		return getStops();
+	}
+
+	final String GetSomethingStop() {
+		String url = "http://142.55.49.127/WebAPI/api/Stop/"+rID+"?s=asdf";
+		BufferedReader inStream = null;
+		try {
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpGet httpRequest = new HttpGet(url);
+			HttpResponse response = httpClient.execute(httpRequest);
+			inStream = new BufferedReader(new InputStreamReader(response
+					.getEntity().getContent()));
+
+			StringBuffer buffer = new StringBuffer("");
+			String line = "";
+			String NL = System.getProperty("line.separator");
+			while ((line = inStream.readLine()) != null) {
+				buffer.append(line + NL);
+			}
+			inStream.close();
+
+			result = buffer.toString();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (inStream != null) {
+				try {
+					inStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return (result);
+
+	}
+
+	protected void onPostExecute(String result) {
+		// t.setText(result);
+	}
+
+	@Override
+	protected void onPreExecute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public List<Stop> getStops() {
+		
+		String json = GetSomethingStop();
+		JsonElement jelement = new JsonParser().parse(json);
+		JsonObject jobject = new JsonObject();
+		JsonArray jarray = jelement.getAsJsonArray();
+		Stop[] parsedJson = new Stop[jarray.size()];
+		Store [] stores = new Store[jarray.size()];
+		for (int i = 0; i < jarray.size(); i++) {
+			jobject = jarray.get(i).getAsJsonObject();
+			String id = (jobject.get("Store_Id").toString()).replace("\"",
+					"");
+			stores[i] = getStore(id);
+
+		}
+		
+		
+
+		List<Stop> list = Arrays.asList(parsedJson);
+
+		// ListView listTask ;
+		// listTask.setAdapter(adapt);
+
+		return list;
+	}
+	
+	public Store[] getStore(String id){
+		String storeJson = "";
+		String url = "http://142.55.49.127/WebAPI/api/Stop/"+rID+"?s=asdf";
+		BufferedReader inStream = null;
+		try {
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpGet httpRequest = new HttpGet(url);
+			HttpResponse response = httpClient.execute(httpRequest);
+			inStream = new BufferedReader(new InputStreamReader(response
+					.getEntity().getContent()));
+
+			StringBuffer buffer = new StringBuffer("");
+			String line = "";
+			String NL = System.getProperty("line.separator");
+			while ((line = inStream.readLine()) != null) {
+				buffer.append(line + NL);
+			}
+			inStream.close();
+
+			storeJson = buffer.toString();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (inStream != null) {
+				try {
+					inStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		JsonElement jelement = new JsonParser().parse(storeJson);
+		JsonObject jobject = new JsonObject();
+		JsonArray jarray = jelement.getAsJsonArray();
+		Store parsedJson;;
+			jobject = jarray.get(0).getAsJsonObject();
+			String address = (jobject.get("Address").toString()).replace("\"","");
+			String name = (jobject.get("Name").toString()).replace("\"","");
+			String city = (jobject.get("City").toString()).replace("\"","");
+			parsedJson = new Store(address, name, city);
+		}
+		return parsedJson;
+		
+		
+	}
+}

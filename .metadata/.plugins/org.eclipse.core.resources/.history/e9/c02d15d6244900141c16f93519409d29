@@ -1,0 +1,26 @@
+package com.NaN.nutracker;
+
+public class Stop {
+	public String stopID;
+	public int storeID;
+	public boolean selected;
+
+	public Stop() {
+		super();
+	}
+
+	public Stop(String loadid,int storeID, boolean selected) {
+		super();
+		this.stopID = loadid;
+		this.storeID = storeId;
+		this.selected = selected;
+	}
+
+	public String getloadID() {
+		return stopID;
+	}
+
+	public boolean getSelected() {
+		return selected;
+	}
+}

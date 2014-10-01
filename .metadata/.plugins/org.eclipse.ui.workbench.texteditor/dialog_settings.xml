@@ -2,22 +2,28 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="&quot;wrap_content&quot;" key="selection"/>
+		<item value="nutracker" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="&quot;match_parent&quot;"/>
-			<item value="activity"/>
-			<item value="GetView"/>
-			<item value="getView"/>
-			<item value="getview"/>
-			<item value="load_row"/>
-			<item value="adapt"/>
-			<item value="Relative"/>
+			<item value="NuTracker"/>
+			<item value="android:layout_width=&quot;0&quot;"/>
+			<item value="14sp"/>
+			<item value="12sp"/>
+			<item value="android:textStyle=&quot;bold&quot;"/>
+			<item value="&#x0A;        android:textStyle=&quot;bold&quot;&#x0A;        android:textStyle=&quot;bold&quot;&#x0A;        android:textStyle=&quot;bold&quot;"/>
+			<item value="22sp"/>
+			<item value="fill_parent"/>
 		</list>
 		<list key="replacehistory">
+			<item value="android:layout_width=&quot;0dp&quot;"/>
+			<item value="18sp"/>
+			<item value="14sp"/>
+			<item value=""/>
+			<item value="12sp"/>
+			<item value="wrap_content"/>
 			<item value="&quot;wrap_content&quot;"/>
 			<item value="Linear"/>
 		</list>
@@ -26,7 +32,7 @@
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="589" key="DIALOG_X_ORIGIN"/>
-		<item value="135" key="DIALOG_Y_ORIGIN"/>
+		<item value="125" key="DIALOG_Y_ORIGIN"/>
+		<item value="974" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

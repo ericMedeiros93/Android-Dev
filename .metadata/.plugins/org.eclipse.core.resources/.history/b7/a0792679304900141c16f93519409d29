@@ -1,0 +1,131 @@
+package com.NaN.nutracker;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class ViewStops extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_view_loads);
+
+		/*
+		 * if (savedInstanceState == null) {
+		 * getFragmentManager().beginTransaction() .add(R.id.container, new
+		 * PlaceholderFragment()).commit(); }
+		 */
+
+		String rId = getIntent().getExtras().getString("rId");
+		TextView text = (TextView) findViewById(R.id.routeID);
+		text.setText(rId);
+
+		try {
+			populateList(rId);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.view_loads, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_view_loads,
+					container, false);
+			return rootView;
+		}
+	}
+
+	/**
+	 * Populates the ListView in the ViewLoads Activity.
+	 * 
+	 * @throws ExecutionException
+	 * @throws InterruptedException
+	 */
+	public void populateList(String rId) throws InterruptedException,
+			ExecutionException {
+		// Tried to add headers but was having some difficulty. Removed it for
+		// this submission.
+
+		//ListView listHeader=(ListView)findViewById(R.id.loadHeader);
+		ListView listTask = (ListView) findViewById(R.id.loads);
+
+		 Stop header = new Stop("",true, new Store());
+		 //List<Stop> headerList = Arrays.asList(header);
+		 //LoadHeaderAdapter headerAdapt = new LoadHeaderAdapter(this,
+		 //R.layout.load_header_layout, headerList);
+		 //listHeader.setAdapter(headerAdapt);
+
+		List<Stop> list = new GetStops().execute(rId).get();
+		list.set(0, header);
+		
+		StopAdapter adapt = new StopAdapter(this, R.layout.store_row_layout,
+				list);
+		listTask.setAdapter(adapt);
+	}
+
+	/**
+	 * Creates the intent to go to the main menu.
+	 * 
+	 * @param view
+	 */
+	public void viewLoads(View view) {
+		Intent intent = new Intent(this, MainMenu.class);
+		startActivity(intent);
+	}
+
+	/**
+	 * Finishes the activity going back to the EnterRoute.
+	 * 
+	 * @param view
+	 */
+	public void cancel(View view) {
+		finish();
+	}
+
+}
