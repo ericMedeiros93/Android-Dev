@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="nutracker" key="selection"/>
+		<item value="15dp" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="10dp"/>
+			<item value="Relatvie"/>
+			<item value="toast"/>
+			<item value="android:layout_width=&quot;wrap_content&quot;"/>
+			<item value="Populate"/>
 			<item value="NuTracker"/>
 			<item value="android:layout_width=&quot;0&quot;"/>
 			<item value="14sp"/>
-			<item value="12sp"/>
-			<item value="android:textStyle=&quot;bold&quot;"/>
-			<item value="&#x0A;        android:textStyle=&quot;bold&quot;&#x0A;        android:textStyle=&quot;bold&quot;&#x0A;        android:textStyle=&quot;bold&quot;"/>
-			<item value="22sp"/>
-			<item value="fill_parent"/>
 		</list>
 		<list key="replacehistory">
+			<item value="15dp"/>
+			<item value="Linear"/>
+			<item value="&#x0A;        android:layout_width=&quot;0dp&quot;&#x0A;        android:layout_weight=&quot;1&quot;&#x0A;        android:layout_width=&quot;0dp&quot;&#x0A;        android:layout_weight=&quot;1&quot;"/>
 			<item value="android:layout_width=&quot;0dp&quot;"/>
 			<item value="18sp"/>
 			<item value="14sp"/>
 			<item value=""/>
 			<item value="12sp"/>
-			<item value="wrap_content"/>
-			<item value="&quot;wrap_content&quot;"/>
-			<item value="Linear"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,0 +1,62 @@
+package com.NaN.nutracker;
+
+import java.io.IOException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.AsyncTask;
+
+public class PostClaim extends AsyncTask<String, Void, Boolean> {
+	private Activity activity;
+	private Context context;
+	private String date, description, driverId;
+
+	public PostClaim(Activity activity) {
+		this.activity = activity;
+	}
+
+	@Override
+	protected Boolean doInBackground(String... params) {
+		
+		sendSomething();
+		return false;
+		// TODO Auto-generated method stub
+
+	}
+
+	final void sendSomething() {
+		String url = "http://142.55.49.127/WebAPI/api/Claim";
+		HttpClient httpClient = new DefaultHttpClient();
+		HttpPost httpRequest = new HttpPost(url);
+		httpRequest
+				.setHeader("Content-Type", "application/json; charset=utf-8");
+		//httpRequest.setEntity(entity)
+
+		try {
+			HttpResponse response = httpClient.execute(httpRequest);
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected void onPostExecute(String result) {
+
+	}
+
+	@Override
+	protected void onPreExecute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

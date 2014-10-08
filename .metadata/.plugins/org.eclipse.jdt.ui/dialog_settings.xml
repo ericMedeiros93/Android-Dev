@@ -36,9 +36,98 @@
 		<item value="456" key="DIALOG_X_ORIGIN"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="350" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
+		<item value="300" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
+	</section>
+	<section name="javadoc">
+		<item value="private" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/TipSplit/javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home" key="javadoc_command_history"/>
+		<item value="1.6" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="/Users/eric/Google%20Drive/Semester%206/Android-Dev/TipSplit/doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="week2_spin">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week2_spin/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week2_spin/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Week2_example">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/Week2_example/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/Week2_example/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="PizzaOrdering">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/PizzaOrdering/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/PizzaOrdering/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="TipSplit">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/TipSplit/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google%20Drive/Semester%206/Android-Dev/TipSplit/doc" key="destdir"/>
+				<item value="file:/Users/eric/Google%2520Drive/Semester%25206/Android-Dev/TipSplit/doc/" key="href"/>
+			</section>
+			<section name="week4_scratch">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week4_scratch/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week4_scratch/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="week5_inclass">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week5_inclass/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week5_inclass/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="NuTracker">
+				<item value="/Users/eric/Google Drive/Android Apps/NuTracker/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Android Apps/NuTracker/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="week5_intnet">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week5_intnet/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week5_intnet/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="week4_inclass">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week4_inclass/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week4_inclass/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="week3_1">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week3_1/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/week3_1/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="bmi">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/bmi/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/bmi/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HelloWorld">
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/HelloWorld/javadoc.xml" key="antpath"/>
+				<item value="/Users/eric/Google Drive/Semester 6/Android-Dev/HelloWorld/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
 	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="false" key="SynchronizedModifier"/>
@@ -50,6 +139,13 @@
 		<item value="true" key="showtypes"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="600" key="DIALOG_WIDTH"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<item value="582" key="DIALOG_HEIGHT"/>
+		<item value="420" key="DIALOG_X_ORIGIN"/>
+		<item value="13" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

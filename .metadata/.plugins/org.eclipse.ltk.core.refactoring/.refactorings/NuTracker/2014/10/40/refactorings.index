@@ -3,3 +3,5 @@
 1412139396671	Rename type 'ViewLoads'
 1412139434667	Rename type 'GetLoads'
 1412142280613	Rename type 'LoadAdapter'
+1412260225446	Rename resource 'load_header_layout.xml'
+1412260252527	Rename type 'LoadHeaderAdapter'

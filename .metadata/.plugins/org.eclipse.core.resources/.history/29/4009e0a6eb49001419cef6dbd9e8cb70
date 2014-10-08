@@ -1,0 +1,39 @@
+package com.NaN.nutracker;
+
+import java.io.Serializable;
+
+public class Store implements Serializable {
+	public String address, storeName, city, contactNumber;
+	
+	
+	public String getAddress() {
+		return address;
+	}
+
+
+	public String getStoreName() {
+		return storeName;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public Store(String address, String storeName,String city, String contactNumber) {
+		super();
+		this.address = address;
+		this.storeName = storeName;
+		this.city = city;
+		this.contactNumber = contactNumber;
+	}
+	
+	public Store() {
+		super();
+		this.address = "";
+		this.storeName = "";
+		this.city = "";
+	}
+	
+}

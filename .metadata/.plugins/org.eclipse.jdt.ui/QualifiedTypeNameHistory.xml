@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="com.ericmedeiros.pizzaordering.R.id"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.id"/>
-<fullyQualifiedTypeName name="com.ericmedeiros.tipsplit.R.id"/>
 <fullyQualifiedTypeName name="com.ericmedeiros.week4_scratch.R.id"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
@@ -33,12 +32,19 @@
 <fullyQualifiedTypeName name="android.widget.EditText"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.NaN.nutracker.GetRoutes"/>
-<fullyQualifiedTypeName name="org.apache.http.HttpStatus"/>
 <fullyQualifiedTypeName name="org.apache.http.client.methods.HttpPost"/>
 <fullyQualifiedTypeName name="com.NaN.nutracker.R.layout"/>
 <fullyQualifiedTypeName name="com.NaN.nutracker.R"/>
 <fullyQualifiedTypeName name="com.ericmedeiros.week5_intnet.R.id"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="com.ericmedeiros.week5_inclass.R.id"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.ByteArrayEntity"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="com.NaN.nutracker.R.id"/>
+<fullyQualifiedTypeName name="org.apache.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.ericmedeiros.tipsplit.R.id"/>
+<fullyQualifiedTypeName name="com.ericmedeiros.tipsplit.R.drawable"/>
+<fullyQualifiedTypeName name="com.ericmedeiros.studentinfo.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 </qualifiedTypeNameHistroy>

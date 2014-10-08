@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StudentInfo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="name_hint">Student Name</string>
+    <string name="sdne_name">Software Development, Network Engineering</string>
+    <string name="sa_name">Systems Analyst</string>
+    <string name="cp_name">Computer Programming</string>
+    <string name="need_residence">Need Residence</string>
+    <string name="register">Register</string>
+    
+    
+
+</resources>
