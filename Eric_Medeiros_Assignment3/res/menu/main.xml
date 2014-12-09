@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ericmedeiros.eric_medeiros_assignment3.MainActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/saveOrderItem"
+        android:orderInCategory="80"
+        android:showAsAction="ifRoom"
+        android:title="@string/save"/>
+    <item
+        android:id="@+id/loadOrderItem"
+        android:orderInCategory="90"
+        android:showAsAction="ifRoom"
+        android:title="@string/load"/>
+
+</menu>

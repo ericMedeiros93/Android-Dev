@@ -29,7 +29,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090009;
+        public static final int action_settings=0x7f09000a;
         public static final int calculate=0x7f090004;
         public static final int clear=0x7f090005;
         public static final int edtCost=0x7f090000;
@@ -39,12 +39,15 @@ public final class R {
         public static final int tvSplit=0x7f090008;
         public static final int tvTipTotal=0x7f090006;
         public static final int tvTotal=0x7f090007;
+        public static final int txtAccountFor=0x7f090009;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_select_type=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int select_type=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
@@ -56,6 +59,7 @@ public final class R {
         public static final int hello_world=0x7f050001;
         public static final int people_label=0x7f050006;
         public static final int tip_label=0x7f050003;
+        public static final int title_activity_select_type=0x7f050009;
     }
     public static final class style {
         /** 

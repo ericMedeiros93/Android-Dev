@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="User Info" >
+        <EditTextPreference
+            android:dialogMessage="for logging on"
+            android:dialogTitle="Enter user name"
+            android:key="name"
+            android:summary="For logging on"
+            android:title="User Name" />
+        
+        <CheckBoxPreference
+            android:key="savePassword"
+            android:summary="on next login"
+            android:title="Save Password" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="Connection Options">
+        
+        <ListPreference
+            android:key="intreval"
+            android:title="Set Intreval"
+            android:summary="For system updates"
+            android:entries="@array/intervalEntries" 
+            android:entryValues="@array/intervalEntriesValues"
+            android:dialogTitle="Set Update interval"/>
+        	
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

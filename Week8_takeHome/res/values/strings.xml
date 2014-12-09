@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Week8_takeHome</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="click_settings">Click on Settings</string>
+    <string name="preferences">Settings</string>
+    
+    <string-array name="historyEntries">
+        <item>1 pizza order only</item>
+        <item>3 pizza orders</item>
+        <item>5 pizza orders</item>
+        <item>10 pizza orders</item>
+    </string-array>
+    
+    <string-array name="historyEntriesValues">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+</resources>

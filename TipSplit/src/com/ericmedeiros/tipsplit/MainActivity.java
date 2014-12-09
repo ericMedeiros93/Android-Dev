@@ -54,6 +54,12 @@ public class MainActivity extends Activity {
 					edtOtherTip.setEnabled(true);
 				} else {
 					edtOtherTip.setEnabled(false);
+					
+					//If the tip can be calculated without user input then the 
+					//total and tip are re-calculated. 
+					if(total != 0){
+						calculate(spnTips);
+					}
 				}
 
 			}
@@ -65,6 +71,8 @@ public class MainActivity extends Activity {
 
 		});
 
+		//Create an OnItemSelected listnener so when the amount of people is changed
+		//the split total is changed. 
 		spnPeople.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -117,15 +125,16 @@ public class MainActivity extends Activity {
 		ArrayAdapter<CharSequence> tipAdapter = ArrayAdapter
 				.createFromResource(this, R.array.tip,
 						android.R.layout.simple_spinner_item);
-		tipAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		
+		tipAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spnTips.setAdapter(tipAdapter);
 
 		ArrayAdapter<CharSequence> peopleAdapter = ArrayAdapter
 				.createFromResource(this, R.array.people,
 						android.R.layout.simple_spinner_item);
-		peopleAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		
+		peopleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		
 		spnPeople.setAdapter(peopleAdapter);
 	}
 

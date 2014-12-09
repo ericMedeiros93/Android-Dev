@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Week11_ListView_Adapters</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="load_provinces">Load Provinces</string>
+    <string name="province">Province: </string>
+    <string name="capital">Capital: </string>
+
+    <string-array name="provinces">
+        <item name="ON">Ontario</item>
+        <item name="QC">Quebec</item>
+        <item name="NS">Nova Scotia</item>
+        <item name="NB">New Brunswick</item>
+        <item name="MB">Manitoba</item>
+        <item name="BC">British Columbia</item>
+        <item name="PE">Prince Edward Island</item>
+        <item name="SK">Saskatchewan</item>
+        <item name="AB">Alberta</item>
+        <item name="NL">Newfoundland and Labrador</item>
+    </string-array>
+    
+    <string-array name="capitals">
+        <item name="ON">Toronto</item>
+        <item name="QC">Quebec</item>
+        <item name="NS">Halifax</item>
+        <item name="NB">Fredericton</item>
+        <item name="MB">Winnipeg</item>
+        <item name="BC">Victoria</item>
+        <item name="PE">Charlottetown</item>
+        <item name="SK">Regina</item>
+        <item name="AB">Edmonton</item>
+        <item name="NL">St. John\'s</item>
+    </string-array>
+
+</resources>

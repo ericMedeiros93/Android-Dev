@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">week8_preferenceActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="preferences">Settings</string>
+    <string-array name="intervalEntries">
+        <item>60 minutes</item>
+        <item>3 Hours</item>
+        <item>6 Hours</item>
+        <item>Never</item>
+    </string-array>
+    
+    <string-array name="intervalEntriesValues">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>0</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">week13_1</string>
+        <string name="list_name">week13_1 Context Menu</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

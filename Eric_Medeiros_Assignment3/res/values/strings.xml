@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eric_Medeiros_Assignment3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="preferences">Settings</string>
+    <string name="pizza_size">Pizza Size</string>
+    <string name="toppings">Toppings</string>
+    <string name="payment">Payment</string>
+    <string name="credit">Credit Card</string>
+    <string name="cash">Cash</string>
+    <string name="pay">Pay Now!</string>
+    <string name="save">Save</string>
+    <string name="load">Load</string>
+
+    <string-array name="historyEntries">
+        <item>1 pizza order only</item>
+        <item>3 pizza orders</item>
+        <item>5 pizza orders</item>
+        <item>10 pizza orders</item>
+    </string-array>
+    <string-array name="historyEntriesValues">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="fileEntries">
+        <item>Local File (default)</item>
+        <item>Server file 1</item>
+        <item>Server file 2</item>
+        <item>Server file 3</item>
+    </string-array>
+    <string-array name="fileEntriesValues">
+        <item>local</item>
+        <item>server1</item>
+        <item>server2</item>
+        <item>server3</item>
+    </string-array>
+
+    <string name="title_activity_payment">PaymentActivity</string>
+
+</resources>

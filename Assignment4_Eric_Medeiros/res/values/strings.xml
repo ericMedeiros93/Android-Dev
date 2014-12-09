@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Player Listing</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="player_hint">Player Name</string>
+    <string name="goalie">Goalie</string>
+    <string name="defence">Defence</string>
+    <string name="forward">Forward</string>
+    <string name="goals_hint">Number of Goals</string>
+    <string name="save_button">Save</string>
+    <string name="view_button">View All</string>
+    <string name="title_activity_player_list">PlayerListActivity</string>
+
+</resources>

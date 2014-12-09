@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="arms">
+        <item name="ON">@drawable/ic_ontario</item>
+        <item name="QC">@drawable/ic_quebec</item>
+        <item name="NS">@drawable/ic_nova_scotia</item>
+        <item name="NB">@drawable/ic_new_brunswick</item>
+        <item name="MB">@drawable/ic_manitoba</item>
+        <item name="BC">@drawable/ic_british_columbia</item>
+        <item name="PE">@drawable/ic_prince_edward_island</item>
+        <item name="SK">@drawable/ic_saskatchewan</item>
+        <item name="AB">@drawable/ic_alberta</item>
+        <item name="NL">@drawable/ic_newfoundland_and_labrador</item>
+    </array>
+
+</resources>

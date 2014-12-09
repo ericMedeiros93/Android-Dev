@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eric_Medeiros</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_account_type">AccountType</string>
+    <string name="sign_up">Sign up</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="confirm_hint">Confirm Password</string>
+    <string name="next_button">Next Step</string>
+    <string name="account_type_label">Types of Account:</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="finish_button">Finish</string>
+
+    <string-array name="accountTypes">
+        <item>Free</item>
+        <item>Professional</item>
+        <item>Enterprise</item>
+    </string-array>
+
+</resources>
